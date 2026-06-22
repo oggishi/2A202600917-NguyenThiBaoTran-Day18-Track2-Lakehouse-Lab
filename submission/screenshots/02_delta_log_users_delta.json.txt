@@ -1,0 +1,105 @@
+$ cat _lakehouse/scratch/users_delta/_delta_log\00000000000000000000.json
+
+{
+  "protocol": {
+    "minReaderVersion": 1,
+    "minWriterVersion": 2
+  }
+}
+{
+  "metaData": {
+    "id": "294ed34a-38a6-444a-8ae9-1a626d8da1a1",
+    "name": null,
+    "description": null,
+    "format": {
+      "provider": "parquet",
+      "options": {}
+    },
+    "schemaString": "{\"type\":\"struct\",\"fields\":[{\"name\":\"id\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}},{\"name\":\"name\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"age\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}},{\"name\":\"city\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}",
+    "partitionColumns": [],
+    "createdTime": 1782114443430,
+    "configuration": {}
+  }
+}
+{
+  "add": {
+    "path": "part-00001-f32123de-716f-4dda-8f41-04fc31648dd7-c000.snappy.parquet",
+    "partitionValues": {},
+    "size": 1415,
+    "modificationTime": 1782114443437,
+    "dataChange": true,
+    "stats": "{\"numRecords\":3,\"minValues\":{\"name\":\"alice\",\"id\":1,\"city\":\"Danang\",\"age\":25},\"maxValues\":{\"name\":\"charlie\",\"id\":3,\"age\":35,\"city\":\"Hanoi\"},\"nullCount\":{\"name\":0,\"age\":0,\"city\":0,\"id\":0}}",
+    "tags": null,
+    "deletionVector": null,
+    "baseRowId": null,
+    "defaultRowCommitVersion": null,
+    "clusteringProvider": null
+  }
+}
+{
+  "commitInfo": {
+    "timestamp": 1782114443437,
+    "operation": "WRITE",
+    "operationParameters": {
+      "mode": "Overwrite"
+    },
+    "operationMetrics": {
+      "execution_time_ms": 7,
+      "num_added_files": 1,
+      "num_added_rows": 3,
+      "num_partitions": 0,
+      "num_removed_files": 0
+    },
+    "clientVersion": "delta-rs.py-0.25.5"
+  }
+}
+
+$ cat _lakehouse/scratch/users_delta/_delta_log\00000000000000000001.json
+
+{
+  "metaData": {
+    "id": "294ed34a-38a6-444a-8ae9-1a626d8da1a1",
+    "name": null,
+    "description": null,
+    "format": {
+      "provider": "parquet",
+      "options": {}
+    },
+    "schemaString": "{\"type\":\"struct\",\"fields\":[{\"name\":\"id\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}},{\"name\":\"name\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"age\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}},{\"name\":\"city\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"tier\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}",
+    "partitionColumns": [],
+    "createdTime": 1782114443564,
+    "configuration": {}
+  }
+}
+{
+  "add": {
+    "path": "part-00001-34fae699-b3dc-49c6-b6ab-f7046129566b-c000.snappy.parquet",
+    "partitionValues": {},
+    "size": 1585,
+    "modificationTime": 1782114443568,
+    "dataChange": true,
+    "stats": "{\"numRecords\":1,\"minValues\":{\"city\":\"Hue\",\"name\":\"dan\",\"id\":4,\"tier\":\"premium\",\"age\":28},\"maxValues\":{\"name\":\"dan\",\"city\":\"Hue\",\"tier\":\"premium\",\"age\":28,\"id\":4},\"nullCount\":{\"age\":0,\"city\":0,\"name\":0,\"id\":0,\"tier\":0}}",
+    "tags": null,
+    "deletionVector": null,
+    "baseRowId": null,
+    "defaultRowCommitVersion": null,
+    "clusteringProvider": null
+  }
+}
+{
+  "commitInfo": {
+    "timestamp": 1782114443568,
+    "operation": "WRITE",
+    "operationParameters": {
+      "mode": "Append"
+    },
+    "clientVersion": "delta-rs.py-0.25.5",
+    "operationMetrics": {
+      "execution_time_ms": 4,
+      "num_added_files": 1,
+      "num_added_rows": 1,
+      "num_partitions": 0,
+      "num_removed_files": 0
+    }
+  }
+}

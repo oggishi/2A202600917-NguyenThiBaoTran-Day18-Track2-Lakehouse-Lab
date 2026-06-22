@@ -1,0 +1,93 @@
+$ tree -L 4 _lakehouse  (scratch/events_smallfiles collapsed)
+
+_lakehouse
+  |-bronze
+  |  |-llm_calls_raw
+  |  |  |-_delta_log
+  |  |  |  |-00000000000000000000.json
+  |  |  |-part-00001-1b9a243c-6520-4d07-a566-ef3f0406fd4c-c000.snappy.parquet
+  |  |-llm_calls_tokenized
+  |  |  |-_delta_log
+  |  |  |  |-00000000000000000000.json
+  |  |  |-status=error
+  |  |  |  |-part-00001-f6840358-94d1-4e8c-91b6-3c6c85468c9e-c000.snappy.parquet
+  |  |  |-status=ok
+  |  |  |  |-part-00001-0dd7e21e-b6f4-44d3-b131-1f4dbfe6160e-c000.snappy.parquet
+  |-gold
+  |  |-llm_daily_metrics
+  |  |  |-_delta_log
+  |  |  |  |-00000000000000000000.json
+  |  |  |  |-00000000000000000001.json
+  |  |  |-date=2026-04-01
+  |  |  |  |-part-00001-3aab4cb7-56d7-4912-9c15-a264f8208db6-c000.snappy.parquet
+  |  |  |  |-part-00001-513880a4-19fe-4aed-ba5c-2830df67d2c7-c000.zstd.parquet
+  |  |  |-date=2026-04-02
+  |  |  |  |-part-00001-646e586c-6684-44a5-95ee-feda1cd9a937-c000.snappy.parquet
+  |  |  |  |-part-00001-dfe8c6d0-003e-49cc-b72a-d524473fb55e-c000.zstd.parquet
+  |  |  |-date=2026-04-03
+  |  |  |  |-part-00001-003550b3-a2c0-434f-8c5a-d4b937ee4177-c000.zstd.parquet
+  |  |  |  |-part-00001-b4a6268b-3b0e-4e60-9af5-b1153973c6d4-c000.snappy.parquet
+  |  |  |-date=2026-04-04
+  |  |  |  |-part-00001-16c4ac48-4c67-42d8-9cfd-02dc16a9f7cc-c000.snappy.parquet
+  |  |  |  |-part-00001-95e2fe9a-0836-4208-bd52-f6ecc78c1729-c000.zstd.parquet
+  |  |  |-date=2026-04-05
+  |  |  |  |-part-00001-9d9b89ca-b853-45ba-8da2-2c7b19735eca-c000.snappy.parquet
+  |  |  |  |-part-00001-bb0bc267-3222-445a-8228-3c0d185dd45d-c000.zstd.parquet
+  |  |  |-date=2026-04-06
+  |  |  |  |-part-00001-23be6c80-f0e9-4f6b-a7b2-ac16281b1a40-c000.snappy.parquet
+  |  |  |  |-part-00001-c5eddfed-66e0-40d4-9c24-27837454666c-c000.zstd.parquet
+  |  |  |-date=2026-04-07
+  |  |  |  |-part-00001-6bbcd596-a4fa-4e7f-ba4c-c8b5ac394ad7-c000.zstd.parquet
+  |  |  |  |-part-00001-f9783242-cd8e-4cea-8507-a167240673a1-c000.snappy.parquet
+  |  |  |-date=2026-04-08
+  |  |  |  |-part-00001-4a90db1a-1223-4f97-86a8-487088e1b485-c000.zstd.parquet
+  |  |  |  |-part-00001-f50f322d-f56c-4360-ad6b-bd3b844f3f3e-c000.snappy.parquet
+  |-scratch
+  |  |-_smoke
+  |  |  |-_delta_log
+  |  |  |  |-00000000000000000000.json
+  |  |  |  |-00000000000000000001.json
+  |  |  |-part-00001-40988250-f9e7-4d23-9176-3557a59a1898-c000.snappy.parquet
+  |  |  |-part-00001-97d194a7-9856-437b-b7c7-c9c8e8319f5d-c000.snappy.parquet
+  |  |-customers_tt
+  |  |  |-_delta_log
+  |  |  |  |-00000000000000000000.json
+  |  |  |  |-00000000000000000001.json
+  |  |  |  |-00000000000000000002.json
+  |  |  |  |-00000000000000000003.json
+  |  |  |  |-00000000000000000004.json
+  |  |  |-part-00001-54ac30f8-3538-456f-a1ee-593ca86af329-c000.snappy.parquet
+  |  |  |-part-00001-57c0e9e1-bd44-4889-b397-93071884e774-c000.snappy.parquet
+  |  |  |-part-00001-64c7ca61-f389-4dc0-9784-102c2d7ad0fd-c000.snappy.parquet
+  |  |  |-part-00001-795c8e9d-f6c1-4d4c-b460-6a0c5b794e14-c000.snappy.parquet
+  |  |  |-part-00001-d5b86636-ac51-4639-8c12-a0d08cf3b15b-c000.snappy.parquet
+  |  |-events_smallfiles
+  |  |-token_vault
+  |  |  |-_delta_log
+  |  |  |  |-00000000000000000000.json
+  |  |-users_delta
+  |  |  |-_delta_log
+  |  |  |  |-00000000000000000000.json
+  |  |  |  |-00000000000000000001.json
+  |  |  |-part-00001-34fae699-b3dc-49c6-b6ab-f7046129566b-c000.snappy.parquet
+  |  |  |-part-00001-f32123de-716f-4dda-8f41-04fc31648dd7-c000.snappy.parquet
+  |-silver
+  |  |-llm_calls
+  |  |  |-_delta_log
+  |  |  |  |-00000000000000000000.json
+  |  |  |-date=2026-04-01
+  |  |  |  |-part-00001-1234fe7c-506a-4768-81bb-5ebe38098234-c000.snappy.parquet
+  |  |  |-date=2026-04-02
+  |  |  |  |-part-00001-32a425d7-79bc-47c1-ad26-84928439a027-c000.snappy.parquet
+  |  |  |-date=2026-04-03
+  |  |  |  |-part-00001-2be71891-b55d-4b7e-9393-0d9de7cc7a2a-c000.snappy.parquet
+  |  |  |-date=2026-04-04
+  |  |  |  |-part-00001-413390f0-ce39-49d1-a6e5-4d96cc778055-c000.snappy.parquet
+  |  |  |-date=2026-04-05
+  |  |  |  |-part-00001-50963578-4964-46e9-92e8-e6a8bb5b137c-c000.snappy.parquet
+  |  |  |-date=2026-04-06
+  |  |  |  |-part-00001-721f2841-a051-4123-a922-e3feb6d5c96d-c000.snappy.parquet
+  |  |  |-date=2026-04-07
+  |  |  |  |-part-00001-cae71dc3-faeb-44b4-9afe-d1d124f34a19-c000.snappy.parquet
+  |  |  |-date=2026-04-08
+  |  |  |  |-part-00001-7f8b66f1-a9e2-4c9c-a6fe-c5f18044af86-c000.snappy.parquet
